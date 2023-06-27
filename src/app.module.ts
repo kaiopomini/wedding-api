@@ -4,6 +4,7 @@ import { AuthModule } from './auth/auth.module';
 import { AccessTokenGuard } from './common/guards';
 import { PrismaModule } from './prisma/prisma.module';
 import { ConfigModule } from '@nestjs/config';
+import { InvitesModule } from './invites/invites.module';
 
 @Module({
   imports: [
@@ -12,6 +13,7 @@ import { ConfigModule } from '@nestjs/config';
     ConfigModule.forRoot({
       isGlobal: true,
     }),
+    InvitesModule,
   ],
   providers: [
     {

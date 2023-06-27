@@ -31,7 +31,7 @@ model Invite {
   createdAt   DateTime  @default(now())
   updatedAt   DateTime  @updatedAt
   deletedAt   DateTime?
-  categories  Guest[]
+  guests      Guest[]
 
   @@map("invites")
 }
@@ -44,7 +44,7 @@ model Guest {
   updatedAt DateTime  @updatedAt
   deletedAt DateTime?
   invite    Invite    @relation(fields: [inviteId], references: [id])
-  inviteId  String    @unique @db.Uuid
+  inviteId  String    @db.Uuid
 
   @@map("guests")
 }
